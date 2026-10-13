@@ -1,0 +1,130 @@
+**********************
+PowerShell transcript start
+Start time: 20261013151315
+Username: PICIZ\mileniopc
+RunAs User: PICIZ\mileniopc
+Configuration Name: 
+Machine: ZFB-SOPORTEMI (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Program Files (x86)\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\mileniopc\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\mileniopc\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\mileniopc\AppData\Roaming\Code\logs\20261009T135931\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\mileniopc\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-31396-440369.json' -FeatureFlags @() 
+Process ID: 37292
+PSVersion: 7.5.2
+PSEdition: Core
+GitCommitId: 7.5.2
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+
+############################################################
+             DIAGNOSTICO DE RED CORPORATIVA
+############################################################
+Equipo : ZFB-SOPORTEMI
+Fecha  : 2026-10-13 15:13:15
+
+--- 1. INVENTARIO DE RED ---
+
+Interface Status       LinkSpeed      IPv4          DefaultGateway DNS                        HasRoute
+--------- ------       ---------      ----          -------------- ---                        --------
+Wi-Fi     Disconnected N/A (inactivo)                                                            False
+Ethernet  Up           1 Gbps         172.20.161.12 172.20.161.1   172.20.150.9, 172.20.150.8     True
+
+Ruta predeterminada seleccionada por metrica efectiva: Ethernet; gateway 172.20.161.1; metrica 25
+
+--- 2. PING SOSTENIDO CONCURRENTE (60 segundos) ---
+Los destinos comienzan sus mediciones en paralelo; las pruebas de ping pueden tardar cerca de un minuto.
+
+Name                       Layer         Interface Target       Sent Received Lost LossPercent MinimumMs AverageMs
+----                       -----         --------- ------       ---- -------- ---- ----------- --------- ---------
+Gateway (Ethernet)         Gateway       Ethernet  172.20.161.1   61       61    0        0,00      0,00      0,54
+Internet ICMP (Cloudflare) Internet ICMP Ethernet  1.1.1.1        61       61    0        0,00      5,00      5,98
+Internet ICMP (Google DNS) Internet ICMP Ethernet  8.8.8.8        61       61    0        0,00      1,00      1,23
+
+
+--- 3. PRUEBA FUNCIONAL DNS ---
+DNS 172.20.150.9 en Ethernet: consultando www.microsoft.com...
+DNS 172.20.150.9 en Ethernet: consultando www.cloudflare.com...
+DNS 172.20.150.9 en Ethernet: consultando www.google.com...
+DNS 172.20.150.8 en Ethernet: consultando www.microsoft.com...
+DNS 172.20.150.8 en Ethernet: consultando www.cloudflare.com...
+DNS 172.20.150.8 en Ethernet: consultando www.google.com...
+
+ConfiguredOn DnsServer    QueryName          Success QueryTimeMs Addresses
+------------ ---------    ---------          ------- ----------- ---------
+Ethernet     172.20.150.9 www.microsoft.com     True      115,84 23.2.70.86
+Ethernet     172.20.150.9 www.cloudflare.com    True      115,00 104.16.124.96, 104.16.123.96
+Ethernet     172.20.150.9 www.google.com        True       10,21 142.251.152.119, 142.251.156.119, 142.251.153.119, 142.251.154.119, 142.251.150.119, 142.251.151.119, 142.251.155.119, 142.251.157.119
+Ethernet     172.20.150.8 www.microsoft.com     True        9,81 23.2.70.86
+Ethernet     172.20.150.8 www.cloudflare.com    True        7,97 104.16.123.96, 104.16.124.96
+Ethernet     172.20.150.8 www.google.com        True        7,03 142.251.152.119, 142.251.156.119, 142.251.153.119, 142.251.154.119, 142.251.150.119, 142.251.151.119, 142.251.155.119, 142.251.157.119
+
+
+--- 4. CONECTIVIDAD TCP/443 ---
+Probando TCP 1.1.1.1:443...
+Probando TCP 8.8.8.8:443...
+
+Target  Port Success Status    ConnectTimeMs Error
+------  ---- ------- ------    ------------- -----
+1.1.1.1  443    True Connected          8,10
+8.8.8.8  443    True Connected          2,79
+
+
+--- 5. SOLICITUD HTTPS ---
+Intentando obtener respuesta HTTP(S) de https://www.microsoft.com/ ...
+
+Url                  : https://www.microsoft.com/
+HttpResponseReceived : True
+StatusCode           : 200
+DurationMs           : 76,8
+Error                : 
+
+
+TRACERT omitido: se obtuvo al menos una evidencia de conectividad TCP/HTTPS. Puede ejecutarse manualmente si se necesita investigar una ruta.
+
+--- 7. PRUEBA DE VELOCIDAD (OOKLA SPEEDTEST CLI, OPCIONAL) ---
+La prueba genera trafico significativo y puede afectar temporalmente otras mediciones.
+Ejecutable: G:\Mi unidad\networkDiagnostics\tools\speedtest.exe
+Iniciando Speedtest
+
+Status            : No instalado
+Server            : 
+DownloadMbps      : 
+UploadMbps        : 
+LatencyMs         : 
+JitterMs          : 
+PacketLossPercent : 
+ResultUrl         : 
+Error             : No se encontro speedtest.exe en: G:\Mi unidad\networkDiagnostics\tools\speedtest.exe
+
+[ADVERTENCIA] Speedtest no completo: No instalado
+
+############################################################
+             INTERPRETACION PRELIMINAR
+############################################################
+[OK] No se observo perdida ICMP hacia el gateway durante la muestra.
+[OK DNS] Las 6 consultas realizadas devolvieron direcciones IPv4.
+[OK HTTPS] Se recibio una respuesta HTTP desde el endpoint; codigo 200; tiempo total 76,8 ms.
+[RESUMEN] Gateway, al menos una consulta DNS y el endpoint HTTPS respondieron. Si persiste la lentitud, falta medir ancho de banda y probar el servicio concreto afectado.
+
+Limites: estas pruebas localizan indicios en este equipo y en estos destinos; no identifican por si solas el switch/puerto, firewall o tramo del ISP responsable.
+
+--- ARCHIVOS GENERADOS ---
+Carpeta: G:\Mi unidad\networkDiagnostics\Reportes
+Base de archivos: G:\Mi unidad\networkDiagnostics\Reportes\NetworkDiagnostics_ZFB-SOPORTEMI_20261013_151315
+El TXT contiene la salida de consola; los CSV guardan las metricas por tipo de prueba.
+Si Speedtest se habilita y termina correctamente, tambien se guardan Speedtest.csv y la salida original Speedtest.json.
+
+############################################################
+             FIN DEL DIAGNOSTICO
+############################################################
+**********************
+PowerShell transcript end
+End time: 20261013151416
+**********************

@@ -1,4 +1,0 @@
-"Name","Layer","Interface","Target","DurationSeconds","Sent","Received","Lost","LossPercent","MinimumMs","AverageMs","MaximumMs","JitterApproxMs"
-"Gateway (Ethernet)","Gateway","Ethernet","172.20.161.1","60","60","60","0","0","0","0,25","1","0,42"
-"Internet ICMP (Cloudflare)","Internet ICMP","Ethernet","1.1.1.1","60","60","59","1","1,67","5","5,9","11","0,78"
-"Internet ICMP (Google DNS)","Internet ICMP","Ethernet","8.8.8.8","60","60","60","0","0","1","1,32","11","0,56"
